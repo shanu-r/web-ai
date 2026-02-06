@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Web AI — Login & Insights</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="webai.css">
+</head>
+<body>
+	<div class="bg"></div>
+
+	<main class="app">
+		<section class="card login" id="login-card">
+			<div class="brand">
+				<div class="logo">WA</div>
+				<h1>Web AI</h1>
+			</div>
+			<p class="lead">Smart, beautiful login — demo credentials accepted.</p>
+
+			<form id="login-form" class="form">
+				<label>Email
+					<input type="email" id="email" placeholder="you@domain.com" required>
+				</label>
+				<label>Password
+					<input type="password" id="password" placeholder="Enter password" required>
+				</label>
+				<div class="row between">
+					<label class="small"><input type="checkbox" id="remember"> Remember me</label>
+					<button type="submit" class="btn primary">Sign in</button>
+				</div>
+			</form>
+
+			<div id="login-note" class="note"></div>
+		</section>
+
+		<section class="dashboard" id="dashboard" aria-hidden="true">
+			<header class="dash-head">
+				<div class="dash-left">
+					<div class="logo small">WA</div>
+					<h2>Insights</h2>
+				</div>
+				<div>
+					<button id="logoutBtn" class="btn ghost">Logout</button>
+				</div>
+			</header>
+
+			<div class="cards">
+				<div class="stat card">
+					<div class="stat-title">Active Users</div>
+					<div class="stat-value" id="activeUsers">—</div>
+				</div>
+				<div class="stat card">
+					<div class="stat-title">Conversion Rate</div>
+					<div class="stat-value" id="conversion">—</div>
+				</div>
+				<div class="stat card">
+					<div class="stat-title">Avg. Session</div>
+					<div class="stat-value" id="avgSession">—</div>
+				</div>
+			</div>
+
+			<div class="charts">
+				<div class="chart card">
+					<h3>Users (Last 7 days)</h3>
+					<canvas id="usersChart"></canvas>
+				</div>
+				<div class="chart card">
+					<h3>Conversions</h3>
+					<canvas id="convChart"></canvas>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
